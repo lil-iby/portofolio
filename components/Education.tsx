@@ -3,47 +3,10 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { FiBookOpen, FiAward } from "react-icons/fi";
+import { formations } from "@/_helpers/const";
+import type { Formation } from "@/interfaces/formation";
 
-type Formation = {
-  degree: string;
-  school: string;
-  location: string;
-  period: string;
-  description?: string;
-  highlight?: boolean;
-};
 
-const formations: Formation[] = [
-  {
-    degree: "Ingénieur en Informatique",
-    school: "CESI",
-    location: "Bordeaux, France",
-    period: "2025 — Présent",
-    description: "Formation d'ingénieur en informatique avec spécialisation en développement logiciel et systèmes d'information. Recherche d'alternance pour septembre 2026.",
-    highlight: true,
-  },
-  {
-    degree: "Licence Professionnelle — Génie Logiciel",
-    school: "IUT de Ngaoundéré",
-    location: "Cameroun",
-    period: "2022 — 2023",
-    description: "Licence professionnelle orientée développement logiciel et architecture applicative.",
-  },
-  {
-    degree: "Attestation de Formation DevOps",
-    school: "Formation Cameroun",
-    location: "Cameroun",
-    period: "2022",
-    description: "Formation intensive aux pratiques DevOps : JavaScript, Express.js, Docker, Ansible.",
-  },
-  {
-    degree: "DUT Génie Informatique",
-    school: "IUT de Ngaoundéré",
-    location: "Cameroun",
-    period: "2019 — 2022",
-    description: "Formation technique en informatique couvrant les bases du développement, réseaux et systèmes.",
-  },
-];
 
 function FormationCard({ formation, index }: { formation: Formation; index: number }) {
   const ref = useRef(null);

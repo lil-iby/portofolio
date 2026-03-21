@@ -2,31 +2,8 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { FiMail, FiPhone, FiMapPin, FiGithub, FiLinkedin, FiSend } from "react-icons/fi";
-
-const contactInfo = [
-  {
-    icon: FiMail,
-    label: "Email",
-    value: "ngouibrahim3@gmail.com",
-    href: "mailto:ngouibrahim3@gmail.com",
-    color: "#6366f1",
-  },
-  {
-    icon: FiPhone,
-    label: "Téléphone",
-    value: "06 10 73 82 81",
-    href: "tel:+33610738281",
-    color: "#a855f7",
-  },
-  {
-    icon: FiMapPin,
-    label: "Localisation",
-    value: "Caudéran, Bordeaux",
-    href: "#",
-    color: "#ec4899",
-  },
-];
+import { FiMail, FiPhone, FiGithub, FiLinkedin, FiSend } from "react-icons/fi";
+import { contactInfo } from "@/_helpers/const";
 
 const socials = [
   {
@@ -51,16 +28,13 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-24 relative bg-[#111118]">
-      {/* Top border */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#6366f1]/50 to-transparent" />
 
-      {/* Background glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-6xl mx-auto px-6 relative">
-        {/* Section header */}
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
@@ -82,9 +56,7 @@ export default function Contact() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          {/* Left — Info */}
           <div className="flex flex-col gap-6">
-            {/* Contact cards */}
             {contactInfo.map((info, i) => (
               <motion.a
                 key={info.label}
@@ -108,8 +80,6 @@ export default function Contact() {
                 </div>
               </motion.a>
             ))}
-
-            {/* Socials */}
             <div className="flex gap-4 mt-2">
               {socials.map((s, i) => (
                 <motion.a
@@ -129,15 +99,12 @@ export default function Contact() {
               ))}
             </div>
           </div>
-
-          {/* Right — CTA card */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.2 }}
             className="bg-gradient-to-br from-indigo-500/10 via-purple-500/10 to-pink-500/10 border border-indigo-500/20 rounded-2xl p-8 flex flex-col justify-between"
           >
-            {/* Header */}
             <div>
               <div className="w-14 h-14 rounded-2xl bg-indigo-500/20 flex items-center justify-center mb-6">
                 <span className="text-2xl">🚀</span>
@@ -151,7 +118,6 @@ export default function Contact() {
                 toujours prêt à relever de nouveaux défis.
               </p>
 
-              {/* Tags */}
               <div className="flex flex-wrap gap-2 mb-8">
                 {["Fullstack", "Vue.js", "Next.js", "Laravel", "Bordeaux"].map((tag) => (
                   <span
@@ -163,8 +129,6 @@ export default function Contact() {
                 ))}
               </div>
             </div>
-
-            {/* CTA */}
             <div className="flex flex-col sm:flex-row gap-3">
               <a
                 href="mailto:ngouibrahim3@gmail.com"
@@ -185,7 +149,6 @@ export default function Contact() {
         </div>
       </div>
 
-      {/* Footer */}
       <div className="max-w-6xl mx-auto px-6 mt-20 pt-8 border-t border-[#1e1e2e] flex flex-col sm:flex-row items-center justify-between gap-4">
         <span className="text-[#94a3b8] text-sm">
           © 2026 Ibrahim NGOU PARE. Tous droits réservés.

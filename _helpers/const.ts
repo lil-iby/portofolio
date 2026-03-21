@@ -1,5 +1,5 @@
 import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
-import Formation from "@/interfaces/formation"
+import type { Formation } from "@/interfaces/formation"
 
 
 export const formations: Formation[] = [

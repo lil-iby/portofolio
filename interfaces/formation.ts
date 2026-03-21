@@ -1,4 +1,4 @@
-type Formation = {
+export type Formation = {
   degree: string;
   school: string;
   location: string;
@@ -6,3 +6,5 @@ type Formation = {
   description?: string;
   highlight?: boolean;
 };
+
+export default Formation;

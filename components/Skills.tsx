@@ -2,41 +2,13 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import {
-  SiNextdotjs, SiVuedotjs, SiReact, SiLaravel, SiDocker,
-  SiTypescript, SiJavascript, SiPython, SiHtml5, SiCss,
-  SiMysql, SiGit, SiGithub, SiPhp, SiFirebase, SiAndroidstudio,
-} from "react-icons/si";
+
 import { FiCode } from "react-icons/fi";
+import { skills } from "@/_helpers/const";
+import type { Skill } from "@/interfaces/formation";
 
-type Skill = {
-  name: string;
-  icon: React.ElementType;
-  level: number;
-  color: string;
-  category: string;
-};
 
-const skills: Skill[] = [
-  { name: "Next.js", icon: SiNextdotjs, level: 80, color: "#ffffff", category: "Frontend" },
-  { name: "Vue.js", icon: SiVuedotjs, level: 85, color: "#42b883", category: "Frontend" },
-  { name: "React.js", icon: SiReact, level: 75, color: "#61dafb", category: "Frontend" },
-  { name: "TypeScript", icon: SiTypescript, level: 70, color: "#3178c6", category: "Frontend" },
-  { name: "HTML5", icon: SiHtml5, level: 90, color: "#e34f26", category: "Frontend" },
-  { name: "CSS3", icon: SiCss, level: 85, color: "#1572b6", category: "Frontend" },
 
-  { name: "Laravel", icon: SiLaravel, level: 75, color: "#ff2d20", category: "Backend" },
-  { name: "PHP", icon: SiPhp, level: 80, color: "#777bb4", category: "Backend" },
-  { name: "JavaScript", icon: SiJavascript, level: 85, color: "#f7df1e", category: "Backend" },
-  { name: "Python", icon: SiPython, level: 70, color: "#3776ab", category: "Backend" },
-  { name: "MySQL / SQL", icon: SiMysql, level: 60, color: "#4479a1", category: "Backend" },
-
-  { name: "Docker", icon: SiDocker, level: 50, color: "#2496ed", category: "DevOps & Outils" },
-  { name: "Git", icon: SiGit, level: 75, color: "#f05032", category: "DevOps & Outils" },
-  { name: "GitHub", icon: SiGithub, level: 75, color: "#ffffff", category: "DevOps & Outils" },
-  { name: "Firebase", icon: SiFirebase, level: 25, color: "#ffca28", category: "DevOps & Outils" },
-  { name: "Android Studio", icon: SiAndroidstudio, level: 20, color: "#3ddc84", category: "DevOps & Outils" },
-];
 
 const categories = ["Frontend", "Backend", "DevOps & Outils"];
 

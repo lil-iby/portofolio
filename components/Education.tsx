@@ -89,11 +89,9 @@ export default function Education() {
 
   return (
     <section id="education" className="py-24 relative">
-      {/* Top border */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#6366f1]/50 to-transparent" />
 
       <div className="max-w-6xl mx-auto px-6">
-        {/* Section header */}
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
@@ -113,14 +111,12 @@ export default function Education() {
           </p>
         </motion.div>
 
-        {/* Formation cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {formations.map((formation, i) => (
             <FormationCard key={i} formation={formation} index={i} />
           ))}
         </div>
 
-        {/* Centres d'intérêt */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -2,25 +2,10 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { FiMail, FiPhone, FiGithub, FiLinkedin, FiSend } from "react-icons/fi";
+import { FiMail, FiPhone, FiSend } from "react-icons/fi";
 import { contactInfo } from "@/_helpers/const";
+import { socials } from "@/_helpers/const";
 
-const socials = [
-  {
-    icon: FiGithub,
-    label: "GitHub",
-    handle: "lil-iby",
-    href: "https://github.com/lil-iby",
-    color: "#ffffff",
-  },
-  {
-    icon: FiLinkedin,
-    label: "LinkedIn",
-    handle: "Ibrahim NGOU PARE",
-    href: "https://www.linkedin.com/in/ibrahim-ngou-pare-a582b9251/",
-    color: "#0a66c2",
-  },
-];
 
 export default function Contact() {
   const ref = useRef(null);

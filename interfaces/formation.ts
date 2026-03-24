@@ -8,3 +8,22 @@ export type Formation = {
 };
 
 export default Formation;
+
+export type Experience = {
+  type: "stage" | "projet" | "emploi";
+  role: string;
+  company: string;
+  period: string;
+  location?: string;
+  description: string[];
+  tags: string[];
+  color: string;
+};
+
+export type Skill = {
+  name: string;
+  icon: React.ElementType;
+  level: number;
+  color: string;
+  category: string;
+};

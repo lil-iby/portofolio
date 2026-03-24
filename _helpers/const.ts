@@ -1,5 +1,5 @@
 import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
-import type { Formation, Experience, skill } from "@/interfaces/formation"
+import type { Formation, Experience, Skill } from "@/interfaces/formation"
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 import {
   SiNextdotjs, SiVuedotjs, SiReact, SiLaravel, SiDocker,
@@ -160,7 +160,7 @@ export const experiences: Experience[] = [
   }
 ];
 
-export const skills: skill[] = [
+export const skills: Skill[] = [
   { name: "Next.js", icon: SiNextdotjs, level: 80, color: "#ffffff", category: "Frontend" },
   { name: "Vue.js", icon: SiVuedotjs, level: 85, color: "#42b883", category: "Frontend" },
   { name: "React.js", icon: SiReact, level: 75, color: "#61dafb", category: "Frontend" },

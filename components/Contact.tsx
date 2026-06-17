@@ -98,7 +98,7 @@ export default function Contact() {
                 Open à une alternance
               </h3>
               <p className="text-[#94a3b8] leading-relaxed mb-6">
-                Étudiant ingénieur au CESI Bordeaux, je recherche une alternance en
+                Étudiant en pré Master of Science en informatique à Epitech Bordeaux, je recherche une alternance en
                 développement fullstack à partir de septembre 2026. Motivé, curieux et
                 toujours prêt à relever de nouveaux défis.
               </p>

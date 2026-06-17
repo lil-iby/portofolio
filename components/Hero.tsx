@@ -72,8 +72,8 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-xl md:text-2xl text-[#94a3b8] font-medium mb-6"
             >
-              Étudiant Ingénieur en Informatique
-              <span className="text-[#6366f1]"> CESI Bordeaux</span>
+              Étudiant en pré Master of Science en informatique à 
+              <span className="text-[#6366f1]"> Epitech Bordeaux</span>
             </motion.p>
 
             <motion.p

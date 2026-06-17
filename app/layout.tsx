@@ -8,9 +8,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Ibrahim NGOU PARE — Développeur Fullstack",
+  title: "Ibrahim NGOU PARE | Développeur Fullstack",
   description:
-    "Portfolio d'Ibrahim NGOU PARE, étudiant ingénieur en informatique au CESI Bordeaux. Développeur fullstack en alternance.",
+    "Portfolio d'Ibrahim NGOU PARE, étudiant en pré Master of Science en informatique à Epitech Bordeaux. Développeur fullstack en alternance.",
 };
 
 export default function RootLayout({

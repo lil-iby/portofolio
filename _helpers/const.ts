@@ -222,11 +222,4 @@ export const documents = [
     href: "/EPITECH-Programme_MasterOfScience-E237-V1_2025.05.pdf",
     color: "#7c3348",
   },
-  {
-    icon: FiBookDoc,
-    label: "Livret d'accueil apprenant",
-    description: "Epitech Bordeaux - 2026/2027",
-    href: "/Livret_Accueil_Apprenant_Epitech_2627.pdf",
-    color: "#f59e0b",
-  },
 ];

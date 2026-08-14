@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { FiBriefcase, FiCode, FiCalendar, FiChevronDown } from "react-icons/fi";
+import { FiCode, FiCalendar, FiChevronDown } from "react-icons/fi";
 import type { Experience } from "@/interfaces/formation";
 import { experiences } from "@/_helpers/const";
 
@@ -10,6 +10,8 @@ function ExperienceCard({ exp, index }: { exp: Experience; index: number }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-50px" });
   const [expanded, setExpanded] = useState(true);
+
+  const typeLabel = exp.type === "stage" ? "Stage" : exp.type === "emploi" ? "Emploi" : "Projet";
 
   return (
     <motion.div
@@ -19,32 +21,26 @@ function ExperienceCard({ exp, index }: { exp: Experience; index: number }) {
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="relative"
     >
-      <div
-        className="absolute -left-[25px] top-6 w-4 h-4 rounded-full border-2 border-[#0a0a0f] hidden md:block"
-        style={{ backgroundColor: exp.color }}
-      />
+      <div className="absolute -left-[25px] top-6 w-3 h-3 bg-black hidden md:block" />
 
-      <div className="bg-[#16161f] border border-[#1e1e2e] hover:border-[#6366f1]/40 rounded-2xl p-6 transition-all duration-300 ml-0 md:ml-6">
+      <div className="border border-black hover:bg-black transition-all duration-300 ml-0 md:ml-6 p-6 group">
         <div className="flex items-start justify-between gap-4">
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-1">
-              <span
-                className="text-xs font-semibold px-2.5 py-1 rounded-full"
-                style={{ backgroundColor: `${exp.color}20`, color: exp.color }}
-              >
-                {exp.type === "stage" ? "Stage" : "Projet"}
+              <span className="text-xs font-bold uppercase tracking-wide px-2.5 py-1 border border-black group-hover:border-white text-black group-hover:text-white transition-colors">
+                {typeLabel}
               </span>
-              <div className="flex items-center gap-1.5 text-xs text-[#94a3b8]">
+              <div className="flex items-center gap-1.5 text-xs text-[#777] group-hover:text-[#ccc] transition-colors">
                 <FiCalendar size={11} />
                 {exp.period}
               </div>
             </div>
-            <h3 className="text-lg font-bold text-white mt-2">{exp.role}</h3>
-            <p className="text-[#6366f1] font-semibold text-sm">{exp.company}</p>
+            <h3 className="text-lg font-bold text-black group-hover:text-white mt-2 transition-colors">{exp.role}</h3>
+            <p className="text-[#333] group-hover:text-[#ddd] font-semibold text-sm transition-colors">{exp.company}</p>
           </div>
           <button
             onClick={() => setExpanded(!expanded)}
-            className="text-[#94a3b8] hover:text-white transition-colors mt-1"
+            className="text-black group-hover:text-white transition-colors mt-1"
           >
             <motion.div
               animate={{ rotate: expanded ? 180 : 0 }}
@@ -63,11 +59,8 @@ function ExperienceCard({ exp, index }: { exp: Experience; index: number }) {
         >
           <ul className="mt-4 space-y-2">
             {exp.description.map((item, i) => (
-              <li key={i} className="flex items-start gap-2 text-sm text-[#94a3b8]">
-                <span
-                  className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0"
-                  style={{ backgroundColor: exp.color }}
-                />
+              <li key={i} className="flex items-start gap-2 text-sm text-[#333] group-hover:text-[#ddd] transition-colors">
+                <span className="w-1.5 h-1.5 bg-black group-hover:bg-white mt-1.5 flex-shrink-0 transition-colors" />
                 {item}
               </li>
             ))}
@@ -77,7 +70,7 @@ function ExperienceCard({ exp, index }: { exp: Experience; index: number }) {
             {exp.tags.map((tag) => (
               <span
                 key={tag}
-                className="text-xs font-medium px-3 py-1 rounded-full bg-[#1e1e2e] text-[#94a3b8] border border-[#2a2a3e]"
+                className="text-xs font-medium px-3 py-1 border border-black group-hover:border-white text-black group-hover:text-white transition-colors"
               >
                 {tag}
               </span>
@@ -94,50 +87,51 @@ export default function Experience() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="experience" className="py-24 relative bg-[#111118]">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#6366f1]/50 to-transparent" />
+    <section id="experience" className="relative bg-white border-t border-black">
+      <div className="bg-black py-8 md:py-10 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-display font-black uppercase text-white leading-[0.85] text-[clamp(2.2rem,7vw,4.5rem)]">
+            EXPÉRIENCES <span className="block sm:inline text-[clamp(1.4rem,4vw,2.6rem)]">&amp; PROJETS</span>
+          </h2>
+        </div>
+      </div>
 
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6 py-16 md:py-20">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.5 }}
+          className="mb-14 max-w-2xl"
         >
-          <div className="inline-flex items-center gap-2 bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-sm font-medium px-4 py-2 rounded-full mb-6">
-            <FiBriefcase size={14} />
-            Expériences & Projets
-          </div>
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
-            Mon <span className="gradient-text">parcours</span>
-          </h2>
-          <p className="text-[#94a3b8] text-lg max-w-xl mx-auto">
-            Plusieurs stages en développement fullstack et des projets qui ont forgé mon expertise technique.
+          <p className="text-[#333] leading-relaxed">
+            J&apos;ai grandi comme développeur chez Sygalin - du backend Laravel à la migration Vue.js,
+            en passant par un stage embarqué et du traitement de données scientifiques chez SAINA
+            Engineering. Aujourd&apos;hui je suis en contrat étudiant chez ALDI, à côté de mon Pré-MSc Pro.
           </p>
         </motion.div>
 
         <div className="grid grid-cols-3 gap-4 mb-16">
           {[
-            { value: "4+", label: "Stages réalisés" },
-            { value: "3+", label: "Années d'études" },
-            { value: "5+", label: "Projets livrés" },
+            { value: "4", label: "Stages réalisés" },
+            { value: "3+", label: "Années d'expérience" },
+            { value: "1", label: "CDI décroché" },
           ].map((stat, i) => (
             <motion.div
               key={stat.label}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.2 + i * 0.1 }}
-              className="bg-[#16161f] border border-[#1e1e2e] rounded-2xl p-5 text-center"
+              className="border border-black p-5 text-center"
             >
-              <div className="text-3xl font-black gradient-text mb-1">{stat.value}</div>
-              <div className="text-xs text-[#94a3b8]">{stat.label}</div>
+              <div className="font-display text-3xl font-black text-black mb-1">{stat.value}</div>
+              <div className="text-xs text-[#777] uppercase tracking-wide">{stat.label}</div>
             </motion.div>
           ))}
         </div>
 
         <div className="relative">
-          <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-[#6366f1] via-[#a855f7] to-transparent ml-[-1px] hidden md:block" style={{ left: '1px' }} />
+          <div className="absolute left-0 top-0 bottom-0 w-px bg-black ml-[-1px] hidden md:block" style={{ left: '1px' }} />
 
           <div className="flex flex-col gap-6">
             {experiences.map((exp, i) => (
@@ -150,15 +144,15 @@ export default function Experience() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-12 bg-gradient-to-r from-indigo-500/10 via-purple-500/10 to-pink-500/10 border border-indigo-500/20 rounded-2xl p-6 flex items-center gap-4"
+          className="mt-12 border border-black p-6 flex items-center gap-4"
         >
-          <div className="w-12 h-12 rounded-xl bg-[#6366f1]/20 flex items-center justify-center flex-shrink-0">
-            <FiCode size={22} className="text-[#6366f1]" />
+          <div className="w-12 h-12 border border-black flex items-center justify-center flex-shrink-0">
+            <FiCode size={22} className="text-black" />
           </div>
           <div>
-            <h4 className="text-white font-bold">Méthodologie Agile / SCRUM</h4>
-            <p className="text-[#94a3b8] text-sm">
-              Appliquée dans mes stages avec sprints, daily stand-ups et rétrospectives.
+            <h4 className="text-black font-bold">Agile / SCRUM au quotidien</h4>
+            <p className="text-[#555] text-sm">
+              Sprints, daily stand-ups, rétrospectives - le rythme normal chez Sygalin depuis 2022.
             </p>
           </div>
         </motion.div>

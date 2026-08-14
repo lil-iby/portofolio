@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { FiMail, FiPhone, FiSend } from "react-icons/fi";
+import { FiMail, FiPhone } from "react-icons/fi";
 import { contactInfo } from "@/_helpers/const";
 import { socials } from "@/_helpers/const";
 
@@ -12,31 +12,26 @@ export default function Contact() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="contact" className="py-24 relative bg-[#111118]">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#6366f1]/50 to-transparent" />
-
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl" />
+    <section id="contact" className="relative bg-white border-t border-black">
+      <div className="bg-black py-8 md:py-10 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-display font-black uppercase text-white leading-[0.85] text-[clamp(2.2rem,7vw,4.5rem)]">
+            ON EN <span className="block sm:inline text-[clamp(1.4rem,4vw,2.6rem)]">PARLE ?</span>
+          </h2>
+        </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 relative">
+      <div className="max-w-6xl mx-auto px-6 py-16 md:py-20">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.5 }}
+          className="mb-14 max-w-2xl"
         >
-          <div className="inline-flex items-center gap-2 bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-sm font-medium px-4 py-2 rounded-full mb-6">
-            <FiSend size={14} />
-            Contact
-          </div>
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
-            Travaillons <span className="gradient-text">ensemble</span>
-          </h2>
-          <p className="text-[#94a3b8] text-lg max-w-xl mx-auto">
-            Je suis à la recherche d&apos;une alternance en développement fullstack pour{" "}
-            <span className="text-white font-semibold">septembre 2026</span>. N&apos;hésitez pas à me contacter !
+          <p className="text-[#333] leading-relaxed">
+            Je cherche mon alternance pour septembre 2026. Un mail, un appel, ou un message
+            LinkedIn.
           </p>
         </motion.div>
 
@@ -49,17 +44,14 @@ export default function Contact() {
                 initial={{ opacity: 0, x: -30 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: 0.1 + i * 0.1 }}
-                className="group bg-[#16161f] border border-[#1e1e2e] hover:border-[#6366f1]/50 rounded-2xl p-5 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1"
+                className="group border border-black hover:bg-black p-5 flex items-center gap-4 transition-all duration-300"
               >
-                <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                  style={{ backgroundColor: `${info.color}20` }}
-                >
-                  <info.icon size={20} style={{ color: info.color }} />
+                <div className="w-12 h-12 border border-black group-hover:border-white flex items-center justify-center flex-shrink-0 transition-colors">
+                  <info.icon size={20} className="text-black group-hover:text-white transition-colors" />
                 </div>
                 <div>
-                  <span className="text-xs text-[#94a3b8] font-medium block mb-0.5">{info.label}</span>
-                  <span className="text-sm font-semibold text-white group-hover:text-[#818cf8] transition-colors">
+                  <span className="text-xs text-[#777] group-hover:text-[#ccc] font-medium block mb-0.5 transition-colors">{info.label}</span>
+                  <span className="text-sm font-semibold text-black group-hover:text-white transition-colors">
                     {info.value}
                   </span>
                 </div>
@@ -75,11 +67,11 @@ export default function Contact() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: 0.4 + i * 0.1 }}
-                  className="flex-1 bg-[#16161f] border border-[#1e1e2e] hover:border-[#6366f1]/50 rounded-2xl p-4 flex flex-col items-center gap-2 transition-all duration-300 hover:-translate-y-1 text-center"
+                  className="flex-1 border border-black hover:bg-black group p-4 flex flex-col items-center gap-2 transition-all duration-300 text-center"
                 >
-                  <s.icon size={22} style={{ color: s.color }} />
-                  <span className="text-xs font-bold text-white">{s.label}</span>
-                  <span className="text-xs text-[#94a3b8]">{s.handle}</span>
+                  <s.icon size={22} className="text-black group-hover:text-white transition-colors" />
+                  <span className="text-xs font-bold text-black group-hover:text-white transition-colors">{s.label}</span>
+                  <span className="text-xs text-[#777] group-hover:text-[#ccc] transition-colors">{s.handle}</span>
                 </motion.a>
               ))}
             </div>
@@ -88,26 +80,23 @@ export default function Contact() {
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.2 }}
-            className="bg-gradient-to-br from-indigo-500/10 via-purple-500/10 to-pink-500/10 border border-indigo-500/20 rounded-2xl p-8 flex flex-col justify-between"
+            className="border border-black p-8 flex flex-col justify-between"
           >
             <div>
-              <div className="w-14 h-14 rounded-2xl bg-indigo-500/20 flex items-center justify-center mb-6">
-                <span className="text-2xl">🚀</span>
-              </div>
-              <h3 className="text-2xl font-black text-white mb-3">
-                Open à une alternance
+              <h3 className="text-2xl font-bold text-black mb-3">
+                Pourquoi me faire confiance
               </h3>
-              <p className="text-[#94a3b8] leading-relaxed mb-6">
-                Étudiant en pré Master of Science en informatique à Epitech Bordeaux, je recherche une alternance en
-                développement fullstack à partir de septembre 2026. Motivé, curieux et
-                toujours prêt à relever de nouveaux défis.
+              <p className="text-[#333] leading-relaxed mb-6">
+                J&apos;ai déjà tenu un CDI de développeur frontend, migré un système d&apos;authentification
+                entier de PHP vers Vue.js 3, et livré un backend de paiement en Laravel. Je ne cherche pas
+                une première expérience - je cherche une équipe pour la suite.
               </p>
 
               <div className="flex flex-wrap gap-2 mb-8">
                 {["Fullstack", "Vue.js", "Next.js", "Laravel", "Bordeaux"].map((tag) => (
                   <span
                     key={tag}
-                    className="text-xs font-medium px-3 py-1.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30"
+                    className="text-xs font-medium px-3 py-1.5 border border-black text-black"
                   >
                     {tag}
                   </span>
@@ -117,14 +106,14 @@ export default function Contact() {
             <div className="flex flex-col sm:flex-row gap-3">
               <a
                 href="mailto:ngouibrahim3@gmail.com"
-                className="flex-1 flex items-center justify-center gap-2 bg-[#6366f1] hover:bg-[#4f46e5] text-white font-semibold px-6 py-3.5 rounded-xl transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-indigo-500/30"
+                className="flex-1 flex items-center justify-center gap-2 bg-black hover:bg-[#222] text-white font-semibold px-6 py-3.5 transition-all duration-200"
               >
                 <FiMail size={16} />
                 Envoyer un email
               </a>
               <a
                 href="tel:+33610738281"
-                className="flex-1 flex items-center justify-center gap-2 border border-[#1e1e2e] hover:border-[#6366f1] text-[#94a3b8] hover:text-white font-semibold px-6 py-3.5 rounded-xl transition-all duration-200 hover:scale-105"
+                className="flex-1 flex items-center justify-center gap-2 border border-black hover:bg-black hover:text-white text-black font-semibold px-6 py-3.5 transition-all duration-200"
               >
                 <FiPhone size={16} />
                 Appeler
@@ -134,15 +123,32 @@ export default function Contact() {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 mt-20 pt-8 border-t border-[#1e1e2e] flex flex-col sm:flex-row items-center justify-between gap-4">
-        <span className="text-[#94a3b8] text-sm">
-          © 2026 Ibrahim NGOU PARE. Tous droits réservés.
-        </span>
-        <span className="text-[#94a3b8] text-sm">
-          Construit avec{" "}
-          <span className="text-[#6366f1] font-semibold">Next.js</span> &{" "}
-          <span className="text-[#6366f1] font-semibold">Tailwind CSS</span>
-        </span>
+      <div className="relative bg-black pt-20 pb-10 px-6 overflow-hidden">
+        <div className="max-w-6xl mx-auto">
+          <span className="font-display text-sm font-bold uppercase tracking-wide text-white block mb-2">
+            Ibrahim NGOU PARE
+          </span>
+          <h2 className="font-display font-black uppercase leading-[0.82] tracking-tight text-white text-[clamp(3rem,13vw,8.5rem)]">
+            PORT
+          </h2>
+          <h2 className="font-display font-black uppercase leading-[0.82] tracking-tight text-white text-[clamp(3rem,13vw,8.5rem)] -mt-[2vw]">
+            FOLIO
+          </h2>
+
+          <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 mt-12 pt-8 border-t border-[#333]">
+            <div className="border border-white px-6 py-5">
+              <span className="text-xs font-bold uppercase tracking-widest text-white block mb-3">Contact</span>
+              <div className="flex flex-col gap-1 text-sm text-[#ccc]">
+                <span>ngouibrahim3@gmail.com</span>
+                <span>06 10 73 82 81</span>
+                <span>github.com/lil-iby</span>
+              </div>
+            </div>
+            <span className="text-[#888] text-sm">
+              © 2026 Ibrahim NGOU PARE — Construit avec Next.js &amp; Tailwind CSS
+            </span>
+          </div>
+        </div>
       </div>
     </section>
   );

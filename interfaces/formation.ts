@@ -23,7 +23,7 @@ export type Experience = {
 export type Skill = {
   name: string;
   icon: React.ElementType;
-  level: number;
+  note?: string;
   color: string;
   category: string;
 };

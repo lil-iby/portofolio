@@ -1,21 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --bg-primary: #0a0a0f;
-  --bg-secondary: #111118;
-  --bg-card: #16161f;
-  --accent: #6366f1;
-  --accent-light: #818cf8;
-  --text-primary: #f1f5f9;
-  --text-secondary: #94a3b8;
-  --border: #1e1e2e;
+  --bg: #ffffff;
+  --ink: #0a0a0a;
+  --muted: #666666;
+  --line: #d9d9d9;
 }
 
 @theme inline {
-  --color-background: var(--bg-primary);
-  --color-foreground: var(--text-primary);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--bg);
+  --color-foreground: var(--ink);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-poppins);
 }
 
 * {
@@ -27,9 +23,9 @@ html {
 }
 
 body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  font-family: 'Inter', Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-inter), Arial, sans-serif;
   overflow-x: hidden;
 }
 
@@ -37,33 +33,27 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg-primary);
+  background: var(--bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  border-radius: 3px;
+  background: var(--ink);
+  border-radius: 0;
 }
 
 ::selection {
-  background: var(--accent);
+  background: var(--ink);
   color: white;
 }
 
-.gradient-text {
-  background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.font-display {
+  font-family: var(--font-poppins), sans-serif;
 }
 
-.glow-border {
-  border: 1px solid rgba(99, 102, 241, 0.3);
-  box-shadow: 0 0 20px rgba(99, 102, 241, 0.1), inset 0 0 20px rgba(99, 102, 241, 0.05);
+.photo-mono {
+  filter: grayscale(1) contrast(1.08);
 }
 
-.bg-grid {
-  background-image:
-    linear-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
-  background-size: 50px 50px;
+.bg-dots {
+  background-image: radial-gradient(rgba(10, 10, 10, 0.14) 1px, transparent 1px);
+  background-size: 22px 22px;
 }

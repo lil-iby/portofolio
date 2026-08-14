@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiMenu, HiX } from "react-icons/hi";
+import { FiDownload } from "react-icons/fi";
+import Rosette from "./Rosette";
 
 const navLinks = [
   { label: "Accueil", href: "#hero" },
@@ -38,18 +40,17 @@ export default function Navbar() {
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-[#0a0a0f]/90 backdrop-blur-xl border-b border-[#1e1e2e]"
-            : "bg-transparent"
+        className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300 ${
+          scrolled ? "bg-white/95 backdrop-blur-xl border-black" : "bg-white border-transparent"
         }`}
       >
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <button
             onClick={() => scrollTo("#hero")}
-            className="text-lg font-bold gradient-text"
+            className="flex items-center gap-2 font-display font-black text-base tracking-tight text-black"
           >
-            INP<span className="text-[#6366f1]">.</span>dev
+            <Rosette size={26} className="text-black" />
+            IBRAHIM <span className="hidden sm:inline">NGOU PARE</span>
           </button>
 
           <div className="hidden md:flex items-center gap-8">
@@ -57,28 +58,38 @@ export default function Navbar() {
               <button
                 key={link.href}
                 onClick={() => scrollTo(link.href)}
-                className={`text-sm font-medium transition-colors duration-200 relative group ${
+                className={`text-xs font-bold uppercase tracking-widest transition-colors duration-200 relative group ${
                   activeSection === link.href.replace("#", "")
-                    ? "text-[#818cf8]"
-                    : "text-[#94a3b8] hover:text-white"
+                    ? "text-black"
+                    : "text-[#8a8a8a] hover:text-black"
                 }`}
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#6366f1] group-hover:w-full transition-all duration-300" />
+                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-black group-hover:w-full transition-all duration-300" />
               </button>
             ))}
           </div>
 
-          <a
-            href="mailto:ngouibrahim3@gmail.com"
-            className="hidden md:inline-flex items-center gap-2 bg-[#6366f1] hover:bg-[#4f46e5] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-indigo-500/25"
-          >
-            Me contacter
-          </a>
+          <div className="hidden md:flex items-center gap-3">
+            <a
+              href="/CV-Ibrahim-NGOU-PARE.pdf"
+              download
+              className="inline-flex items-center gap-2 border border-black text-black text-xs font-bold uppercase tracking-wider px-4 py-2.5 hover:bg-black hover:text-white transition-all duration-200"
+            >
+              <FiDownload size={14} />
+              CV
+            </a>
+            <a
+              href="mailto:ngouibrahim3@gmail.com"
+              className="inline-flex items-center gap-2 bg-black text-white text-xs font-bold uppercase tracking-wider px-5 py-2.5 hover:bg-[#222] transition-all duration-200"
+            >
+              Me contacter
+            </a>
+          </div>
 
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden text-white p-2"
+            className="md:hidden text-black p-2"
           >
             {menuOpen ? <HiX size={24} /> : <HiMenu size={24} />}
           </button>
@@ -92,23 +103,33 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-[#0a0a0f]/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 md:hidden"
+            className="fixed inset-0 z-40 bg-black flex flex-col items-center justify-center gap-8 md:hidden"
           >
             {navLinks.map((link) => (
               <button
                 key={link.href}
                 onClick={() => scrollTo(link.href)}
-                className="text-2xl font-bold text-white hover:text-[#818cf8] transition-colors"
+                className="font-display text-2xl font-black uppercase tracking-tight text-white hover:text-[#aaa] transition-colors"
               >
                 {link.label}
               </button>
             ))}
-            <a
-              href="mailto:ngouibrahim3@gmail.com"
-              className="mt-4 bg-[#6366f1] text-white px-8 py-3 rounded-full font-semibold text-lg"
-            >
-              Me contacter
-            </a>
+            <div className="flex flex-col items-center gap-3 mt-4">
+              <a
+                href="mailto:ngouibrahim3@gmail.com"
+                className="bg-white text-black px-8 py-3 font-bold text-lg uppercase tracking-wide"
+              >
+                Me contacter
+              </a>
+              <a
+                href="/CV-Ibrahim-NGOU-PARE.pdf"
+                download
+                className="flex items-center gap-2 text-[#aaa] text-sm font-medium"
+              >
+                <FiDownload size={14} />
+                Télécharger mon CV
+              </a>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

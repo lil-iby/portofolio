@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { FiGithub, FiLinkedin, FiMail, FiPhone, FiMapPin } from "react-icons/fi";
-import { HiDownload } from "react-icons/hi";
+import { FiGithub, FiLinkedin, FiMail, FiPhone, FiMapPin, FiDownload } from "react-icons/fi";
+import Rosette from "./Rosette";
 
 const socialLinks = [
   {
@@ -35,101 +35,108 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative overflow-hidden bg-white pt-28"
     >
-      <div className="absolute inset-0 bg-grid opacity-100" />
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="flex items-start justify-between mb-6 md:mb-10">
+          <div className="font-display text-sm font-bold uppercase tracking-wide text-black leading-tight">
+            Ibrahim NGOU PARE
+            <br />
+            <span className="text-[#8a8a8a] font-medium normal-case tracking-normal">06 10 73 82 81</span>
+          </div>
+          <Rosette size={72} className="text-black -mt-2" />
+        </div>
 
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-600/15 rounded-full blur-3xl" />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="relative"
+        >
+          <h1 className="font-display font-black uppercase leading-[0.82] tracking-tight text-black text-[clamp(3rem,13vw,8.5rem)]">
+            IBRAHIM
+          </h1>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 pt-24 pb-16">
-        <div className="flex flex-col lg:flex-row items-center gap-16">
+          <div className="relative bg-black -mt-[2vw] pt-[3vw] pb-[4vw] md:pt-6 md:pb-8">
+            <span className="absolute top-3 right-0 font-display text-[11px] md:text-sm font-bold uppercase tracking-widest text-white text-right leading-tight">
+              Développeur
+              <br />
+              Fullstack
+            </span>
+            <h1 className="font-display font-black uppercase leading-[0.82] tracking-tight text-white text-[clamp(2.6rem,11.5vw,7.5rem)]">
+              NGOU PARE
+            </h1>
+          </div>
+        </motion.div>
 
-          <div className="flex-1 text-center lg:text-left">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 mt-10 md:mt-14 pb-20">
+          <div className="flex-1">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-sm font-medium px-4 py-2 rounded-full mb-8"
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="inline-flex items-center gap-2 border border-black text-black text-xs font-bold uppercase tracking-widest px-4 py-2 mb-8"
             >
-              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-              Disponible pour alternance — Septembre 2026
+              <span className="w-2 h-2 bg-black rounded-full animate-pulse" />
+              En contrat étudiant chez ALDI — alternance recherchée pour septembre 2026
             </motion.div>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-5xl md:text-7xl font-black text-white mb-4 leading-none tracking-tight"
-            >
-              Ibrahim{" "}
-              <span className="gradient-text">NGOU PARE</span>
-            </motion.h1>
-
             <motion.p
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl md:text-2xl text-[#94a3b8] font-medium mb-6"
+              className="text-[#333] text-base md:text-lg leading-relaxed mb-8 max-w-xl"
             >
-              Étudiant en pré Master of Science en informatique à 
-              <span className="text-[#6366f1]"> Epitech Bordeaux</span>
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-[#94a3b8] text-base md:text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
-            >
-              Curieux et motivé, je recherche une{" "}
-              <span className="text-white font-semibold">alternance en développement fullstack</span>{" "}
-              pour septembre 2026. Passionné par la création d&apos;interfaces modernes et le développement backend.
+              Trois ans chez Sygalin m&apos;ont fait passer de la migration d&apos;un service
+              d&apos;authentification à la construction d&apos;interfaces complètes en Vue.js et Next.js.
+              Aujourd&apos;hui je poursuis mon Pré-MSc Pro à Epitech, en contrat étudiant chez ALDI, et je cherche{" "}
+              <span className="text-black font-semibold">mon alternance</span>, à partir de septembre 2026.
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.35 }}
-              className="flex flex-wrap gap-3 justify-center lg:justify-start mb-8"
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="flex flex-wrap gap-x-6 gap-y-2 mb-10"
             >
-              <span className="flex items-center gap-1.5 text-sm text-[#94a3b8]">
-                <FiMapPin className="text-[#6366f1]" /> Caudéran, Bordeaux
+              <span className="flex items-center gap-1.5 text-sm text-[#555]">
+                <FiMapPin className="text-black" /> Caudéran, Bordeaux
               </span>
-              <span className="flex items-center gap-1.5 text-sm text-[#94a3b8]">
-                <FiPhone className="text-[#6366f1]" /> 06 10 73 82 81
+              <span className="flex items-center gap-1.5 text-sm text-[#555]">
+                <FiPhone className="text-black" /> 06 10 73 82 81
               </span>
-              <span className="flex items-center gap-1.5 text-sm text-[#94a3b8]">
-                <FiMail className="text-[#6366f1]" /> ngouibrahim3@gmail.com
+              <span className="flex items-center gap-1.5 text-sm text-[#555]">
+                <FiMail className="text-black" /> ngouibrahim3@gmail.com
               </span>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-wrap gap-4 justify-center lg:justify-start mb-10"
+              transition={{ duration: 0.6, delay: 0.35 }}
+              className="flex flex-wrap gap-4 mb-10"
             >
               <button
                 onClick={() => scrollToSection("contact")}
-                className="flex items-center gap-2 bg-[#6366f1] hover:bg-[#4f46e5] text-white font-semibold px-7 py-3.5 rounded-full transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-indigo-500/30"
+                className="bg-black hover:bg-[#222] text-white font-bold uppercase tracking-wide text-sm px-7 py-3.5 transition-all duration-200"
               >
                 Me contacter
               </button>
-              <button
-                onClick={() => scrollToSection("experience")}
-                className="flex items-center gap-2 border border-[#1e1e2e] hover:border-[#6366f1] text-[#94a3b8] hover:text-white font-semibold px-7 py-3.5 rounded-full transition-all duration-200 hover:scale-105"
+              <a
+                href="/CV-Ibrahim-NGOU-PARE.pdf"
+                download
+                className="flex items-center gap-2 border border-black hover:bg-black hover:text-white text-black font-bold uppercase tracking-wide text-sm px-7 py-3.5 transition-all duration-200"
               >
-                <HiDownload className="text-[#6366f1]" />
-                Voir mes projets
-              </button>
+                <FiDownload />
+                Télécharger mon CV
+              </a>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="flex items-center gap-4 justify-center lg:justify-start"
+              transition={{ duration: 0.6, delay: 0.45 }}
+              className="flex items-center gap-3"
             >
               {socialLinks.map(({ icon: Icon, href, label }) => (
                 <a
@@ -138,35 +145,29 @@ export default function Hero() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-10 h-10 rounded-full bg-[#16161f] border border-[#1e1e2e] flex items-center justify-center text-[#94a3b8] hover:text-white hover:border-[#6366f1] transition-all duration-200 hover:scale-110"
+                  className="w-10 h-10 border border-black flex items-center justify-center text-black hover:bg-black hover:text-white transition-all duration-200"
                 >
-                  <Icon size={18} />
+                  <Icon size={17} />
                 </a>
               ))}
             </motion.div>
           </div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-            className="flex-shrink-0 flex flex-col items-center gap-8"
+            transition={{ duration: 0.7, delay: 0.25, ease: "easeOut" }}
+            className="flex-shrink-0 flex flex-col items-center gap-6"
           >
-            <div className="relative">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 blur-xl opacity-40 scale-110" />
-              <div className="relative w-52 h-52 md:w-64 md:h-64 rounded-full bg-gradient-to-br from-indigo-500 via-purple-600 to-pink-500 p-1">
-                <div className="w-full h-full rounded-full overflow-hidden">
-                  <Image
-                    src="/pp.jpeg"
-                    alt="Ibrahim NGOU PARE"
-                    width={256}
-                    height={256}
-                    className="w-full h-full object-cover"
-                    priority
-                  />
-                </div>
-              </div>
-              <div className="absolute bottom-3 right-3 w-5 h-5 bg-green-400 rounded-full border-2 border-[#0a0a0f] shadow-lg shadow-green-400/50 animate-pulse" />
+            <div className="w-56 h-72 md:w-64 md:h-80 border border-black overflow-hidden">
+              <Image
+                src="/pp.jpeg"
+                alt="Ibrahim NGOU PARE"
+                width={256}
+                height={320}
+                className="w-full h-full object-cover photo-mono"
+                priority
+              />
             </div>
 
             <div className="flex flex-wrap gap-2 justify-center max-w-xs">
@@ -176,29 +177,14 @@ export default function Hero() {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.5 + i * 0.07 }}
-                  className="bg-[#16161f] border border-[#1e1e2e] text-[#94a3b8] text-xs font-medium px-3 py-1.5 rounded-full hover:border-[#6366f1] hover:text-white transition-all duration-200 cursor-default"
+                  className="border border-black text-black text-xs font-bold uppercase tracking-wide px-3 py-1.5 hover:bg-black hover:text-white transition-all duration-200 cursor-default"
                 >
                   {tech}
                 </motion.span>
               ))}
             </div>
           </motion.div>
-
         </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        >
-          <span className="text-xs text-[#94a3b8] tracking-widest uppercase">Scroll</span>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-            className="w-px h-10 bg-gradient-to-b from-[#6366f1] to-transparent"
-          />
-        </motion.div>
       </div>
     </section>
   );

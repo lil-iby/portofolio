@@ -5,6 +5,7 @@ export type Formation = {
   period: string;
   description?: string;
   highlight?: boolean;
+  badge?: string;
 };
 
 export default Formation;

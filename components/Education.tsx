@@ -27,7 +27,7 @@ function FormationCard({ formation, index }: { formation: Formation; index: numb
       {formation.highlight && (
         <div className="absolute -top-3 left-6">
           <span className="bg-white text-black text-xs font-bold uppercase tracking-wide px-3 py-1">
-            En cours
+            {formation.badge ?? "En cours"}
           </span>
         </div>
       )}
@@ -118,8 +118,9 @@ export default function Education() {
           className="mb-14 max-w-2xl"
         >
           <p className="text-[#333] leading-relaxed">
-            D&apos;un IUT au Cameroun à un Pré-MSc Pro à Epitech Bordeaux - génie informatique, DevOps,
-            puis Pré-MSc Pro, chaque étape a nourri la suivante.
+            D&apos;un IUT au Cameroun à un cursus Ingénieur Informatique par apprentissage au CESI
+            Angoulême - génie informatique, DevOps, puis ingénierie en alternance, chaque étape a
+            nourri la suivante.
           </p>
         </motion.div>
 
@@ -140,7 +141,7 @@ export default function Education() {
             À consulter
           </h3>
           <p className="text-sm text-[#555] mb-6 max-w-xl">
-            Le rythme de mon alternance chez Epitech et le détail du programme, pour ceux qui veulent creuser avant de me recevoir en entretien.
+            Le rythme de mon alternance au CESI Angoulême et le détail du programme, pour ceux qui veulent creuser avant de me recevoir en entretien.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {documents

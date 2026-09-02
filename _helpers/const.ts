@@ -26,12 +26,13 @@ export const socials = [
 ];
 export const formations: Formation[] = [
   {
-    degree: "Pré-MSc Pro (Promo 237)",
-    school: "Epitech Bordeaux",
-    location: "Bordeaux, France",
-    period: "2026 - Présent",
-    description: "Année de Pré-MSc Pro à Epitech Bordeaux. Recherche d'alternance pour septembre 2026.",
+    degree: "Ingénieur Informatique — cursus par apprentissage (RNCP40612)",
+    school: "CESI École d'Ingénieurs Angoulême",
+    location: "Angoulême, Nouvelle-Aquitaine",
+    period: "Oct. 2026 - Sept. 2029",
+    description: "Admis au cursus Ingénieur Informatique en 3 ans par apprentissage. Rentrée le 5 octobre 2026. Recherche d'un contrat d'alternance en Nouvelle-Aquitaine.",
     highlight: true,
+    badge: "Admis",
   },
   {
     degree: "Licence Professionnelle - Génie Logiciel",
@@ -87,7 +88,7 @@ export const experiences: Experience[] = [
     company: "ALDI",
     period: "Mars 2026 - Présent",
     description: [
-      "Emploi étudiant à temps partiel, en parallèle du Pré-MSc Pro à Epitech et de la recherche d'alternance.",
+      "Emploi étudiant à temps partiel, en parallèle de mon admission au CESI Angoulême et de la recherche d'alternance en Nouvelle-Aquitaine.",
     ],
     tags: ["Contrat étudiant"],
     color: "#8a7968",
@@ -211,15 +212,15 @@ export const documents = [
   {
     icon: FiCalendarDoc,
     label: "Calendrier de l'alternance",
-    description: "Rythme école / entreprise - Msc/MBA Promo 237",
-    href: "/Calendrier_Msc-MBA_Promo-237_alternance.pdf",
+    description: "Rythme école / entreprise - CESI 2026-2029",
+    href: "/Calendrier_Alternance_FISA-Informatique_CESI_2026-2029.pdf",
     color: "#c9a15a",
   },
   {
     icon: FiBookDoc,
-    label: "Programme du Msc/MBA",
-    description: "Epitech - trame pédagogique E237",
-    href: "/EPITECH-Programme_MasterOfScience-E237-V1_2025.05.pdf",
+    label: "Programme Ingénieur Informatique",
+    description: "CESI Angoulême - cursus par apprentissage",
+    href: "/CESI_Fiche-Programme_FISA-Informatique.pdf",
     color: "#7c3348",
   },
 ];

@@ -107,7 +107,8 @@ export default function Experience() {
           <p className="text-[#333] leading-relaxed">
             J&apos;ai grandi comme développeur chez Sygalin - du backend Laravel à la migration Vue.js,
             en passant par un stage embarqué et du traitement de données scientifiques chez SAINA
-            Engineering. Aujourd&apos;hui je suis en contrat étudiant chez ALDI, à côté de mon Pré-MSc Pro.
+            Engineering. Aujourd&apos;hui je suis en contrat étudiant chez ALDI, en parallèle de mon
+            admission au CESI Angoulême et de ma recherche d&apos;alternance.
           </p>
         </motion.div>
 

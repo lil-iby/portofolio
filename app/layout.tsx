@@ -16,7 +16,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Ibrahim NGOU PARE | Développeur Fullstack",
   description:
-    "Portfolio d'Ibrahim NGOU PARE, étudiant en Pré-MSc Pro à Epitech Bordeaux. Développeur fullstack en recherche d'alternance.",
+    "Portfolio d'Ibrahim NGOU PARE, admis au cursus Ingénieur Informatique par apprentissage du CESI Angoulême. Développeur fullstack en recherche d'alternance en Nouvelle-Aquitaine.",
 };
 
 export default function RootLayout({

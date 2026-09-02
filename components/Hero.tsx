@@ -78,7 +78,7 @@ export default function Hero() {
               className="inline-flex items-center gap-2 border border-black text-black text-xs font-bold uppercase tracking-widest px-4 py-2 mb-8"
             >
               <span className="w-2 h-2 bg-black rounded-full animate-pulse" />
-              En contrat étudiant chez ALDI — alternance recherchée pour septembre 2026
+              En contrat étudiant chez ALDI — admis au CESI Angoulême, alternance recherchée en Nouvelle-Aquitaine
             </motion.div>
 
             <motion.p
@@ -89,8 +89,9 @@ export default function Hero() {
             >
               Trois ans chez Sygalin m&apos;ont fait passer de la migration d&apos;un service
               d&apos;authentification à la construction d&apos;interfaces complètes en Vue.js et Next.js.
-              Aujourd&apos;hui je poursuis mon Pré-MSc Pro à Epitech, en contrat étudiant chez ALDI, et je cherche{" "}
-              <span className="text-black font-semibold">mon alternance</span>, à partir de septembre 2026.
+              Aujourd&apos;hui je suis en contrat étudiant chez ALDI, admis au cursus Ingénieur Informatique
+              par apprentissage du CESI Angoulême (rentrée le 5 octobre 2026), et je cherche{" "}
+              <span className="text-black font-semibold">mon alternance en Nouvelle-Aquitaine</span>.
             </motion.p>
 
             <motion.div

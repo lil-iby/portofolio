@@ -30,7 +30,7 @@ export const formations: Formation[] = [
     school: "CESI École d'Ingénieurs Angoulême",
     location: "Angoulême, Nouvelle-Aquitaine",
     period: "Oct. 2026 - Sept. 2029",
-    description: "Admis au cursus Ingénieur Informatique en 3 ans par apprentissage. Rentrée le 5 octobre 2026. Recherche d'un contrat d'alternance en Nouvelle-Aquitaine.",
+    description: "Admis au cursus Ingénieur Informatique en 3 ans par apprentissage. Rentrée le 5 octobre 2026. Recherche d'un contrat d'alternance en France.",
     highlight: true,
     badge: "Admis",
   },
@@ -88,7 +88,7 @@ export const experiences: Experience[] = [
     company: "ALDI",
     period: "Mars 2026 - Présent",
     description: [
-      "Emploi étudiant à temps partiel, en parallèle de mon admission au CESI Angoulême et de la recherche d'alternance en Nouvelle-Aquitaine.",
+      "Emploi étudiant à temps partiel, en parallèle de mon admission au CESI Angoulême et de la recherche d'alternance en France.",
     ],
     tags: ["Contrat étudiant"],
     color: "#8a7968",

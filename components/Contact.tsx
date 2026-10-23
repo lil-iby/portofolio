@@ -30,7 +30,7 @@ export default function Contact() {
           className="mb-14 max-w-2xl"
         >
           <p className="text-[#333] leading-relaxed">
-            Je cherche mon alternance en Nouvelle-Aquitaine, en lien avec mon admission au CESI
+            Je cherche mon alternance en France, en lien avec mon admission au CESI
             Angoulême. Un mail, un appel, ou un message LinkedIn.
           </p>
         </motion.div>

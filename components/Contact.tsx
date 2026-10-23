@@ -112,7 +112,7 @@ export default function Contact() {
                 Envoyer un email
               </a>
               <a
-                href="tel:+33610738281"
+                href="tel:+33610736261"
                 className="flex-1 flex items-center justify-center gap-2 border border-black hover:bg-black hover:text-white text-black font-semibold px-6 py-3.5 transition-all duration-200"
               >
                 <FiPhone size={16} />
@@ -140,7 +140,7 @@ export default function Contact() {
               <span className="text-xs font-bold uppercase tracking-widest text-white block mb-3">Contact</span>
               <div className="flex flex-col gap-1 text-sm text-[#ccc]">
                 <span>ngouibrahim3@gmail.com</span>
-                <span>06 10 73 82 81</span>
+                <span>06 10 73 62 61</span>
                 <span>github.com/lil-iby</span>
               </div>
             </div>

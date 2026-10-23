@@ -68,8 +68,8 @@ export const contactInfo = [
   {
     icon: FiPhone,
     label: "Téléphone",
-    value: "06 10 73 82 81",
-    href: "tel:+33610738281",
+    value: "06 10 73 62 61",
+    href: "tel:+33610736261",
     color: "#c9a15a",
   },
   {

@@ -42,7 +42,7 @@ export default function Hero() {
           <div className="font-display text-sm font-bold uppercase tracking-wide text-black leading-tight">
             Ibrahim NGOU PARE
             <br />
-            <span className="text-[#8a8a8a] font-medium normal-case tracking-normal">06 10 73 82 81</span>
+            <span className="text-[#8a8a8a] font-medium normal-case tracking-normal">06 10 73 62 61</span>
           </div>
           <Rosette size={72} className="text-black -mt-2" />
         </div>
@@ -104,7 +104,7 @@ export default function Hero() {
                 <FiMapPin className="text-black" /> Caudéran, Bordeaux
               </span>
               <span className="flex items-center gap-1.5 text-sm text-[#555]">
-                <FiPhone className="text-black" /> 06 10 73 82 81
+                <FiPhone className="text-black" /> 06 10 73 62 61
               </span>
               <span className="flex items-center gap-1.5 text-sm text-[#555]">
                 <FiMail className="text-black" /> ngouibrahim3@gmail.com
